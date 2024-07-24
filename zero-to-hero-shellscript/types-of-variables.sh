@@ -21,6 +21,7 @@ else
 fi
 
 
+
 #special variables
 
   echo "Number of arguments $#"
@@ -28,3 +29,6 @@ fi
   echo "Exit status of the last command $?"
   echo "Process ID of the current script is $$"
   echo "Process ID of last background command is $!"
+
+
+#sh types-of-variables.sh 1 4
