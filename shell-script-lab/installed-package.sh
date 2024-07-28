@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Define the package to check
 PACKAGE="git"
 
 if yum list installed | grep -q "$PACKAGE"; then
