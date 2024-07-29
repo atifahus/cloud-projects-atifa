@@ -15,4 +15,8 @@ fi
 
   getIpAddress i-0ee08ff32387c87ce
 
+
+#way2
+ip_address=$(getIpAddress i-0ee08ff32387c87ce)
+echo "Another way: " $ip_address
  

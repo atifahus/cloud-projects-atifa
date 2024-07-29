@@ -12,3 +12,7 @@ echo "Instance ID for $TAG_NAME is:  $result"
 
 
 get_instance_id Role fullAccessS3ForInstance
+
+#way 2 to call function
+result=$(get_instance_id Role fullAccessS3ForInstance)
+echo "This is another way" $result
