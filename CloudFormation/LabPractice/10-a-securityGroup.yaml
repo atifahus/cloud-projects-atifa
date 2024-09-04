@@ -1,0 +1,18 @@
+Resources:
+  MySecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allows Only HTTP
+      GroupName: cf-sg-http
+      SecurityGroupIngress:
+        -   IpProtocol: tcp
+            FromPort: 80
+            ToPort: 80
+            CidrIp: 0.0.0.0/0
+      VpcId: vpc-013920c36623adb03
+
+Outputs:
+  SSH:
+    Value: !Ref MySecurityGroup
+    Export:
+      Name: SG-lab

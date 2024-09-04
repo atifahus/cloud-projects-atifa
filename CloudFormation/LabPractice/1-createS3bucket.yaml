@@ -1,0 +1,23 @@
+#creates an S3 bucket only if the environment type is set to "prod"
+
+Parameters:
+  env:
+    Description: Setting the environment
+    Type: String
+    Default: dev
+    AllowedValues:
+      - prod
+      - test
+      - dev
+
+Conditions:
+  isProd: !Equals [ !Ref env, "prod" ]
+Resources:
+  firstBucket:
+    Type: AWS::S3::Bucket
+    Condition: isProd
+    Properties:
+      BucketName: atifa123456789inprod
+
+
+

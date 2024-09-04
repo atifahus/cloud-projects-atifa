@@ -1,0 +1,27 @@
+
+Parameters:
+  instanceTypeParameter:
+    Description: This will allow only t2.micro and t2.small
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+      - t2.small
+
+  vpc:
+    Description: This is portfolio vpc
+    Type: String
+    Default: portfolio-vpc
+
+
+Resources:
+  MyFirstEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+
+      ImageId: "ami-0ae8f15ae66fe8cda"
+      InstanceType: !Ref instanceTypeParameter
+      VpcId: vpc-013920c36623adb03
+
+      SecurityGroupIds:
+        - !ImportValue SG-lab

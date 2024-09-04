@@ -1,0 +1,11 @@
+[
+  {
+    "ParameterKey": "env",
+    "ParameterValue": "dev"
+  },
+
+  {
+    "ParameterKey":"app",
+    "ParameterValue": "portfolio-atifa-test"
+  }
+]

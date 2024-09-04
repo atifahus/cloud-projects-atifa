@@ -1,0 +1,12 @@
+Parameters:
+  env:
+    Type: String
+  app:
+    Type: String
+
+
+Resources:
+  joinBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub '${env}-${app}-bucket'

@@ -1,0 +1,12 @@
+Resources:
+  InstanceTermination:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-0ae8f15ae66fe8cda"
+      InstanceType: t2.micro
+      DisableApiTermination: true
+
+
+# aws cloudformation create-stack --stack-name terminateEnable\
+#      --template-body file://6-TerminationProtection.yaml\
+#      --capabilities CAPABILITY_IAM

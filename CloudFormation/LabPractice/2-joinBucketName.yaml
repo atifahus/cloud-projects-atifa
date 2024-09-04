@@ -1,0 +1,10 @@
+Parameters:
+  bucketParam:
+    Type: String
+    Default: atifa
+
+Resources:
+  joinBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Join ["-", [!Ref bucketParam, !Ref AWS::AccountId, !Ref AWS::Region]]

@@ -1,0 +1,18 @@
+Resources:
+  CreateAutoScaling:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+      AutoScalingGroupName: testUpdate
+      LaunchTemplate:
+        LaunchTemplateName: testTemplate
+        Version: 1
+
+      DesiredCapacity: 1
+      MinSize: 1
+      MaxSize: 2
+
+    UpdatePolicy:
+      AutoScalingRollingUpdate:
+        MinInstancesInService: 1
+        MaxBatchSize: 1
+        PauseTime: PT5M

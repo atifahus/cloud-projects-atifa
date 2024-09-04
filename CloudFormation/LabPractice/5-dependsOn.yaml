@@ -1,0 +1,21 @@
+Resources:
+  securityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allows Only HTTP
+      GroupName: cf-sg-http
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+
+
+  MyFirstEC2Instance:
+    Type: AWS::EC2::Instance
+    DependsOn: securityGroup
+    Properties:
+      ImageId: "ami-0ae8f15ae66fe8cda"
+      InstanceType: t2.micro
+      SecurityGroups:
+          - !Ref securityGroup
