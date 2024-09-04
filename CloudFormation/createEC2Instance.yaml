@@ -1,0 +1,35 @@
+Parameters:
+  instanceTypeParameter:
+    Description: This will allow only t2.micro and t2.small
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+      - t2.small
+
+  vpc:
+    Description: This is portfolio vpc
+    Type: String
+    Default: portfolio-vpc
+
+  subnetBlocks:
+    Description: List of subnets from the portfolio vpc
+    Type: CommaDelimitedList
+    Default: subnet-05527fdea5f6833c2, subnet-0be2a0eafbdeec825
+
+
+Resources:
+  MyFirstEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+        AvailabilityZone: "us-east-1b"
+        ImageId: "ami-0ae8f15ae66fe8cda"
+        InstanceType: !Ref instanceTypeParameter
+        VpcId: !Ref vpc
+        SubnetId: !Select [1, !Ref subnetBlocks]
+
+
+
+# aws cloudformation create-stack --stack-name myFirstEC2Instance --template-body file://createEC2Instance.yaml --capabilities CAPABILITY_IAM
+#aws cloudformation validate-template --template-body file://createEC2Instance.yaml
+#aws cloudformation update-stack --stack-name myfirstEC2Instance --template-body file://createEC2Instance.yaml --capabilities CAPABILITY_IAM

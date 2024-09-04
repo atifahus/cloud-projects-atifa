@@ -1,0 +1,7 @@
+Resources:
+  firstBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: "atifa123456789bucket"
+
+ # aws cloudformation create-stack --stack-name S3Bucket --template-body file://createS3Bucket.yaml --capabilities CAPABILITY_IAM
