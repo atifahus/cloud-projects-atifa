@@ -1,0 +1,24 @@
+PUT index1
+
+PUT index1/_doc/1
+{
+  "airline": "jetblue",
+  "flight": "123",
+  "@timestamp": "2024-09-04T05:46:00"
+}
+
+PUT index1/_doc/2
+{
+  "airline": "jetblue",
+  "flight": "ak12",
+  "@timestamp": "2024-09-04T05:00:00"
+}
+
+PUT index1/_doc/3
+{
+  "airline": "turkish",
+  "flight": "tk89",
+  "@timestamp": "2024-09-04T04:45:00"
+}
+
+GET index1/_search
